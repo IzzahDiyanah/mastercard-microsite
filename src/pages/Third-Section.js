@@ -21,8 +21,7 @@ const ThirdSection = () => {
                 pin: true,
                 scrub: 1,
                 snap: 1 / (sections.length - 1),
-                end: "+=200",
-                markers:true
+                end: "+=3500",
             }
         });
 
@@ -33,17 +32,27 @@ const ThirdSection = () => {
     }, []);
 
     return (
-        <>  
-             <div className="container w-[200%] h-screen flex flex-nowrap" style={{ overscrollBehavior: 'none', height:'100vh', width:'400vh' }}>
-                <section className="panel w-screen h-full flex-shrink-0">
+        <>
+            {/* Global styles to prevent overflow */}
+            <style jsx global>{`
+                body {
+                    overscroll-behavior: none;
+                    overflow-x: hidden;
+                }
+            `}</style>
+            
+            <div 
+                className="container h-screen flex flex-nowrap overflow-hidden" style={{overscrollBehavior: 'none',width: '300vh', overflowX: 'hidden'}}
+            >
+                <section className="panel flex-shrink-0" style={{width: '100vw', height: '100vh'}}>
                    <ResearchFirst />
                 </section>
 
-                <section className="panel w-screen h-full flex-shrink-0">
+                <section className="panel flex-shrink-0" style={{ width: '100vw', height: '100vh' }}>
                    <ResearchSecond />
                 </section>
 
-                <section className="panel w-screen h-full flex-shrink-0">
+                <section className="panel flex-shrink-0" style={{ width: '100vw', height: '100vh' }}>
                    <ResearchThird />
                 </section> 
             </div>
