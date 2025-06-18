@@ -2,6 +2,7 @@
 import React, { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import { LuMoveRight } from "react-icons/lu";
+import Image from 'next/image'
 
 const KeyTopicsComponent = () => {
   const marqueeRef = useRef(null);
@@ -57,7 +58,7 @@ useEffect(() => {
 }, []);
 
   return (
-    <div className="min-h-screen bg-gradient-to-bl from-amber-900 to-black flex items-center justify-center">
+    <div className="min-h-screen flex items-center justify-center">
       <div className="flex items-center justify-between w-full max-w-7xl">
         <div className="flex-1 pr-16">
           <h1 className="text-8xl font-bold text-transparent bg-clip-text bg-amber-500 leading-tight">
@@ -65,8 +66,12 @@ useEffect(() => {
           </h1>
           
           {/* Arrow */}
-          <div className="mt-8">
-           <LuMoveRight className="text-white w-60 h-40" />
+          <div className="mt-8 w-80 h-70">
+           <img
+              src='/images/right-arrow.png'
+              alt='arrow right'
+              className="object-cover"
+            />
           </div>
         </div>
 

@@ -18,7 +18,7 @@ const LastSection = () => {
                 trigger: ".container",
                 pin: true,
                 scrub: 1,
-                snap: 1 / (sections.length - 1),
+                // snap: 1 / (sections.length - 1),
                 end: "+=3500",
             }
         });
@@ -31,7 +31,7 @@ const LastSection = () => {
 
     return (
         <>
-             <div className="container w-[200%] h-screen flex flex-nowrap" style={{ overscrollBehavior: 'none', heigh: '100vh', width: '400vh' }}>
+             <div className="bg-gradient-to-bl from-amber-900 to-black container w-[200%] h-screen flex flex-nowrap" style={{ overscrollBehavior: 'none', heigh: '100vh', width: '400vh' }}>
                 <section className="panel w-screen h-full flex-shrink-0">
                    <KeyTopics />
                 </section>

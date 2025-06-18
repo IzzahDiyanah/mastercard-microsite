@@ -73,7 +73,7 @@ const FraudCategories = () => {
   const selectedItemData = menuItems.find(item => item.id === selectedItem);
 
   return (
-    <div className="min-h-screen bg-gradient-to-bl from-amber-900 to-black flex items-center justify-center">
+    <div className="min-h-screen flex items-center justify-center">
       <div className="container mx-auto py-12">
         <div className="grid lg:grid-cols-2 gap-12 items-center mb-10">
             <div className="text-white/90 leading-relaxed text-xl p-6">
