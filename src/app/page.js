@@ -1,7 +1,9 @@
-import ResearchApp from '@/component/Research-Approach';
+import LastSection from '@/pages/last-section';
 import { gsap } from '../lib/gsap';
 import Hero from '../pages/Hero';
 import SecondSection from '@/pages/second-section';
+import ThirdSection from '@/pages/Third-Section';
+
 
 
 export default function Home() {
@@ -9,7 +11,8 @@ export default function Home() {
 <>
 <Hero />
 <SecondSection />
-<ResearchApp/>
+<ThirdSection/>
+    
   </>  
   );
 }

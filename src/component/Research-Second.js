@@ -3,48 +3,8 @@ import { useRef, useEffect } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
-const ResearchApp = () => {
-  const container = useRef(null);
-
-  useEffect(() => {
-    gsap.registerPlugin(ScrollTrigger);
-
-    let sections = gsap.utils.toArray(".panel");
-    
-    const ctx = gsap.context(() => {
-      gsap.to(sections, {
-        xPercent: -100 * (sections.length - 1),
-        ease: "none",
-        scrollTrigger: {
-          trigger: ".container",
-          pin: true,
-          scrub: 1,
-          snap: 1 / (sections.length - 1),
-          end: "+=3500",
-        }
-      });
-    }, container);
-
-    return () => ctx.revert(); 
-  }, []);
-
+const SecondApp = () => {
   return (
-    <div id="container"  className="min-h-screen flex">
-      <main className="flex overflow-hidden md:overflow-x-auto scrollbar-hide">
-        <div className="panel w-full min-w-screen h-screen bg-cover bg-center bg-no-repeat flex" 
-          style={{ backgroundImage: "url('/images/Research Approach.png')" }}>
-          <div className="w-full h-full p-4 md:p-8 lg:p-15 flex items-center">
-            <div className="w-full md:w-1/2 lg:w-[10%] flex flex-col gap-4 md:gap-10 lg:gap-20">
-              <h1 className="font-extrabold text-4xl sm:text-5xl md:text-6xl lg:text-8xl xl:text-[150px] leading-tight md:leading-snug lg:leading-[160px] text-[rgb(247,158,27)]">
-                Research Approach
-              </h1>
-              <div className="w-full md:w-[150%] lg:w-[235%]">
-                <img src="/images/right-arrow.png" alt="Right-arrow" className="w-full h-full object-contain"/>
-              </div>
-            </div>
-          </div>
-        </div>
-        
         <section className="panel min-w-screen h-screen flex items-center justify-center">
       
           <div className="flex h-full w-full">
@@ -87,28 +47,8 @@ const ResearchApp = () => {
             </div>
           </div>
         </section>
-        
-        <section className="panel min-w-screen h-screen bg-[rgb(247,158,27)] flex items-center justify-center">
-          <div className="flex pr-[5%] pl-[5%] gap-25">
-              <div className="flex flex-col items-center justify-center gap-10">
-                <h1 className="font-extrabold text-[150px] text-black leading-[160px]">Data Volume</h1>
-                <div>
-                  <img src="/images/Data-Volume.png" alt="Data-volume" className="w-full h-full"/>
-                </div>
-              </div>
-              <div className="flex flex-col text-black">
-                <p className="font-medium text-[45px] leading-[50px]">Consumer conversations were measured in volume of mentions</p>
-                <div className="border-dashed border border-black mb-80" ></div>
-                <p className="font-extrabold text-[200px] leading-[100px]">6.7k</p>
-                <p className="font-extrabold text-[80px] leading-[100px]">mentions</p>
-                <p className="font-medium text-[24px] leading-[34px]">about digital payment safety and security were gathered for cards and non-card services</p>
-              </div>
-          </div>
-        </section>
-
-      </main>
-    </div>
+    
   );
 }
 
-export default ResearchApp;
+export default SecondApp;
