@@ -1,6 +1,9 @@
 import { gsap } from '../lib/gsap';
-import Hero from '../component/Hero';
-import SecondSection from '@/component/second-section';
+import Hero from '@/pages/Hero';
+import SecondSection from '@/pages/second-section';
+import KeyTopics from '@/pages/key-topics';
+import Categories from '@/pages/categories';
+import LastSection from '@/pages/last-section';
 
 
 export default function Home() {
@@ -8,7 +11,8 @@ export default function Home() {
 <>
 <Hero />
 <SecondSection />
+<LastSection/>
 {/* start adding your component below */}
-</>  
+</> 
   );
 }
