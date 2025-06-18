@@ -1,6 +1,7 @@
+import ResearchApp from '@/component/Research-Approach';
 import { gsap } from '../lib/gsap';
-import Hero from '../component/Hero';
-import SecondSection from '@/component/second-section';
+import Hero from '../pages/Hero';
+import SecondSection from '@/pages/second-section';
 
 
 export default function Home() {
@@ -8,7 +9,7 @@ export default function Home() {
 <>
 <Hero />
 <SecondSection />
-{/* start adding your component below */}
-</>  
+<ResearchApp/>
+  </>  
   );
 }
