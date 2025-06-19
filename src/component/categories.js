@@ -96,7 +96,7 @@ const FraudCategories = () => {
           </div>
         </div>
             <div className="flex border border-gray-700 rounded-lg overflow-hidden max-w-6xl mx-auto shadow-2xl">
-                <div className="w-96">
+                <div className="w-43 md:w-96">
                 {menuItems.map((item) => (
                     <div
                     key={item.id}
@@ -108,16 +108,16 @@ const FraudCategories = () => {
                     onClick={() => setSelectedItem(item.id)}
                     >
                     <div className="flex items-center space-x-3">
-                        <span className="text-lg font-medium">{item.id}.</span>
-                        <span className="text-lg">{item.title}</span>
+                        <span className="text-sm md:text-lg font-medium">{item.id}.</span>
+                        <span className="text-sm md:text-lg">{item.title}</span>
                     </div>
                     </div>
                 ))}
                 </div>
 
-               <div className="flex-1 p-8 text-white">
+               <div className="flex-1 p-8 md:p-5 text-white">
                 <div className="flex flex-col items-center space-y-6">
-                <div className="relative">
+                <div className="relative ">
                     {selectedItemData?.icon}
                     <div className="absolute -bottom-2 -right-2 bg-white rounded-full p-1">
                     <Plus className="w-4 h-4 text-gray-900" />
@@ -127,7 +127,7 @@ const FraudCategories = () => {
                 <div className="overflow-hidden">
                     <p 
                     ref={descriptionRef}
-                    className="text-lg text-gray-300 text-center max-w-md leading-relaxed gsap-text-animate"
+                    className="text-sm md:text-lg text-gray-300 text-center max-w-md leading-relaxed gsap-text-animate"
                     >
                     {selectedItemData?.description}
                     </p>
@@ -135,9 +135,9 @@ const FraudCategories = () => {
                 <div className="text-center overflow-hidden">
                     <span 
                     ref={subcategoriesRef}
-                    className="text-gray-400 text-base gsap-text-animate"
+                    className="text-gray-400 text-sm md:text-base gsap-text-animate"
                     >
-                    <span className="font-medium">Subcategories:</span> {selectedItemData?.subcategories}
+                    <span className="font-medium text-sm md:text-lg">Subcategories:</span> {selectedItemData?.subcategories}
                     </span>
                 </div>
                 </div>

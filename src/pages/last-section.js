@@ -9,35 +9,52 @@ const LastSection = () => {
     useEffect(() => {
         gsap.registerPlugin(ScrollTrigger);
 
-        let sections = gsap.utils.toArray(".panel");
+            let sections = gsap.utils.toArray(".panel");
 
-        gsap.to(sections, {
-            xPercent: -100 * (sections.length - 1),
-            ease: "none",
-            scrollTrigger: {
-                trigger: ".container",
-                pin: true,
-                scrub: 1,
-                // snap: 1 / (sections.length - 1),
-                end: "+=3500",
-            }
-        });
+
+                gsap.to(sections, {
+                    xPercent: -100 * (sections.length - 1),
+                    ease: "none",
+                    scrollTrigger: {
+                        trigger: ".desktop-container",
+                        pin: true,
+                        scrub: 1,
+                        end: () => `+=${sections.length * 1200}`,
+                        invalidateOnRefresh: true,
+                    }
+                });
 
         // Cleanup function
         return () => {
-            ScrollTrigger.getAll().forEach(trigger => trigger.kill());
+            mm.revert();
         };
     }, []);
 
     return (
         <>
-             <div className="bg-gradient-to-bl from-amber-900 to-black container max-w-screen h-screen flex flex-nowrap" style={{ overscrollBehavior: 'none', heigh: '100vh', width: '400vh' }}>
+            {/* Desktop View*/}
+            <div className="desktop-container bg-gradient-to-bl from-amber-900 to-black h-screen md:flex flex-nowrap overflow-hidden hidden"
+                 style={{ 
+                     overscrollBehavior: 'none',
+                     width: '200vw'
+                 }}>
                 <section className="panel w-screen h-full flex-shrink-0">
-                   <KeyTopics />
+                    <KeyTopics />
                 </section>
 
                 <section className="panel w-screen h-full flex-shrink-0">
-                   <Categories />
+                    <Categories />
+                </section>
+            </div>
+
+            {/* Mobile View */}
+            <div className="bg-gradient-to-bl from-amber-900 to-black md:hidden">
+                <section className="w-full min-h-screen p-4">
+                    <KeyTopics />
+                </section>
+                
+                <section className="w-full min-h-screen p-4">
+                    <Categories />
                 </section>
             </div>
         </>

@@ -8,7 +8,7 @@ const Hero = () => {
   return (
     <>
 
-      <div className="relative max-h-screen bg-gradient-to-br from-orange-600 to-red-600 overflow-hidden">
+      <div className="relative max-h-screen bg-gradient-to-br from-amber-600 to-red-600 overflow-hidden">
         <div className="relative bg-black opacity-88">
           <Cursor isHovered={isHovered}/>
           <div className="absolute inset-0">
@@ -129,7 +129,7 @@ const Hero = () => {
                 Singapore | OCT 2023 - MAR 2024
               </p>
               
-              <button className="inline-flex items-start md:items-center flex-col md:flex-row px-4 md:px-8 py-4 bg-orange-500 text-white font-semibold rounded-lg transition-colors shadow-lg w-full md:w-auto">
+              <button className="inline-flex items-start md:items-center flex-col md:flex-row px-4 md:px-8 py-4 bg-amber-600 text-white font-semibold rounded-lg transition-colors shadow-lg w-full md:w-auto">
                 <div className="flex items-center mb-2 md:mb-0 md:mr-4">
                   <div className="flex items-center justify-center mr-3">
                      <div className="relative flex items-center justify-center mr-3">
