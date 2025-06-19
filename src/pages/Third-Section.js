@@ -11,13 +11,13 @@ const ThirdSection = () => {
     useEffect(() => {
         gsap.registerPlugin(ScrollTrigger);
 
-        let sections = gsap.utils.toArray(".panel");
+        let sections = gsap.utils.toArray(".panel2");
 
         gsap.to(sections, {
             xPercent: -100 * (sections.length - 1),
             ease: "none",
             scrollTrigger: {
-                trigger: ".container",
+                trigger: ".container2",
                 pin: true,
                 scrub: 1,
                 // snap: 1 / (sections.length - 1),
@@ -42,17 +42,17 @@ const ThirdSection = () => {
             `}</style>
             
             <div 
-                className="container h-screen flex flex-nowrap overflow-hidden" style={{overscrollBehavior: 'none',width: '300vh', overflowX: 'hidden'}}
+                className="container2 h-screen flex flex-nowrap max-w-screen overflow-hidden" style={{overscrollBehavior: 'none',width: '300vh', overflowX: 'hidden'}}
             >
-                <section className="panel flex-shrink-0" style={{width: '100vw', height: '100vh'}}>
+                <section className="panel2 flex-shrink-0" style={{width: '100vw', height: '100vh'}}>
                    <ResearchFirst />
                 </section>
 
-                <section className="panel flex-shrink-0" style={{ width: '100vw', height: '100vh' }}>
+                <section className="panel2 flex-shrink-0" style={{ width: '100vw', height: '100vh' }}>
                    <ResearchSecond />
                 </section>
 
-                <section className="panel flex-shrink-0" style={{ width: '100vw', height: '100vh' }}>
+                <section className="panel2 flex-shrink-0" style={{ width: '100vw', height: '100vh' }}>
                    <ResearchThird />
                 </section> 
             </div>
