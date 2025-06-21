@@ -32,26 +32,39 @@ const App = () => {
         modules={[Pagination]}
         className="mySwiper"
         breakpoints={{
-          // when window width is >= 0px (mobile)
           0: {
             slidesPerView: 1,
             spaceBetween: 20
           },
-          // when window width is >= 640px (small tablets)
           640: {
             slidesPerView: 1.5,
             spaceBetween: 20
           },
-          // when window width is >= 768px (tablets)
           768: {
-            slidesPerView: 2,
-            spaceBetween: 30
+            slidesPerView: 1.5,
+            spaceBetween: 200
           },
-          // when window width is >= 1024px (desktops)
           1024: {
             slidesPerView: 2,
-            spaceBetween: 30
+            spaceBetween: 600
+          },
+          1440: {
+            slidesPerView: 2,
+            spaceBetween: 200
+          },
+          1680: {
+            slidesPerView: 2,
+            spaceBetween: -50
+          },
+          1920: {
+            slidesPerView: 2,
+            spaceBetween: -300
+          },
+          2560: {
+            slidesPerView: 2,
+            spaceBetween: -900
           }
+
         }}
       >
         <SwiperSlide><NewFirst /></SwiperSlide>
