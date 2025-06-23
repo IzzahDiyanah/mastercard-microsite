@@ -10,6 +10,7 @@ const FraudCategories = () => {
   const descriptionRef = useRef(null);
   const subcategoriesRef = useRef(null);
 
+  
   useEffect(() => {
     const loadGSAP = async () => {
       const menuItemIds = [1, 2, 3, 4, 5];
@@ -48,7 +49,7 @@ const FraudCategories = () => {
         .to(currentBg, {
           xPercent: 101,
           opacity: 0,
-          duration: 0.8,
+          duration: 2.5,
           ease: "power2.in",
           onComplete: () => {
             gsap.set(currentBg, { xPercent: -101 });
@@ -71,13 +72,11 @@ const FraudCategories = () => {
       const descSplit = new SplitText(descriptionRef.current, { type: "lines" });
       const subSplit = new SplitText(subcategoriesRef.current, { type: "lines" });
       
-      // Create masks for each line
       gsap.set([descSplit.lines, subSplit.lines], { 
         yPercent: 100,
         opacity: 0 
       });
       
-      // Animate in
       gsap.to([descSplit.lines, subSplit.lines], {
         yPercent: 0,
         opacity: 1,
@@ -157,14 +156,17 @@ const FraudCategories = () => {
                     <div
                     key={item.id}
                     data-menu-id={item.id}
-                    className={`relative p-4 cursor-pointer transition-all duration-200 border-b border-r border-gray-700 last:border-b-0 overflow-hidden text-white`}
+                    className={`relative p-4 cursor-pointer transition-all duration-200 border-b border-r border-gray-700 last:border-b-0 overflow-hidden text-white ${
+                      selectedItem === item.id ? 'bg-amber-500' : 'bg-transparent hover:bg-gray-800/30'
+                    }`}
                     >
-                    {/* GSAP Animation Background */}
-                    <div className="menu-item-bg absolute inset-0 bg-amber-500"></div>
                     
                     <div className="relative z-10 flex items-center space-x-3">
                         <span className="text-sm md:text-base font-medium">{item.id}.</span>
                         <span className="text-sm md:text-base">{item.title}</span>
+                    </div>
+                      <div className="absolute bottom-0 left-0 w-full h-1 bg-gray-600/30">
+                      <div className="menu-item-bg h-full bg-white shadow-lg"></div>
                     </div>
                     </div>
                 ))}
