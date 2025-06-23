@@ -17,7 +17,7 @@ const ThirdSection = () => {
             xPercent: -100 * (sections.length - 1),
             ease: "none",
             scrollTrigger: {
-                trigger: ".container2",
+                trigger: ".desktop-container2",
                 pin: true,
                 scrub: 1,
                 // snap: 1 / (sections.length - 1),
@@ -33,20 +33,38 @@ const ThirdSection = () => {
 
     return (
         <>
-            <div 
-                className="container2 h-screen flex flex-nowrap max-w-screen overflow-hidden" style={{overscrollBehavior: 'none',width: '300vh', overflowX: 'hidden'}}
-            >
-                <section className="panel2 flex-shrink-0" style={{width: '100vw', height: '100vh'}}>
-                   <ResearchFirst />
+            {/* Desktop View*/}
+            <div className="desktop-container2 bg-gradient-to-bl from-amber-900 to-black h-screen md:flex flex-nowrap overflow-hidden hidden"
+                 style={{ 
+                     overscrollBehavior: 'none',
+                     width: '200vw'
+                 }}>
+                <section className="panel2 w-screen h-full flex-shrink-0">
+                    <ResearchFirst />
                 </section>
 
-                <section className="panel2 flex-shrink-0" style={{ width: '100vw', height: '100vh' }}>
-                   <ResearchSecond />
+                <section className="panel2 w-screen h-full flex-shrink-0">
+                    <ResearchSecond />
                 </section>
 
-                <section className="panel2 flex-shrink-0" style={{ width: '100vw', height: '100vh' }}>
-                   <ResearchThird />
-                </section> 
+                <section className="panel2 w-screen h-full flex-shrink-0">
+                    <ResearchThird />
+                </section>
+            </div>
+
+            {/* Mobile View */}
+            <div className="bg-gradient-to-bl from-amber-900 to-black md:hidden">
+                <section className="w-full min-h-screen">
+                    <ResearchFirst />
+                </section>
+                
+                <section className="w-full min-h-screen">
+                    <ResearchSecond />
+                </section>
+
+                <section className="w-full min-h-screen">
+                    <ResearchThird/>
+                </section>
             </div>
         </>
     );
