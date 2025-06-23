@@ -4,8 +4,10 @@ import { CreditCard, Plus } from 'lucide-react';
 import Image from 'next/image';
 import { gsap } from 'gsap';
 import { SplitText } from 'gsap/SplitText';
+import { useCursorInteractions } from '@/hooks/cursorInteractions';
 
 const FraudCategories = () => {
+  const { textHover, cardHover } = useCursorInteractions(); 
   const [selectedItem, setSelectedItem] = useState(1);
   const descriptionRef = useRef(null);
   const subcategoriesRef = useRef(null);
@@ -131,7 +133,7 @@ const FraudCategories = () => {
     <div className="min-h-screen flex items-center justify-center">
       <div className="container mx-auto py-12">
         <div className="grid lg:grid-cols-2 gap-12 items-center mb-10">
-            <div className="text-white/90 leading-relaxed text-xl p-6">
+            <div className="text-white/90 leading-relaxed text-xl p-6" {...textHover()}>
               <p>
                 The conversation were segmented into categories and 
                 subcategories based on key topics. Additional topics were 
@@ -151,7 +153,7 @@ const FraudCategories = () => {
           </div>
         </div>
             <div className="flex border border-gray-700 rounded-lg overflow-hidden max-w-6xl mx-auto shadow-2xl">
-                <div className="w-43 md:w-96">
+                <div className="w-43 md:w-96" {...cardHover()}>
                 {menuItems.map((item) => (
                     <div
                     key={item.id}

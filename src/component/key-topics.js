@@ -1,8 +1,10 @@
 'use client'
 import React, { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
+import { useCursorInteractions } from '@/hooks/cursorInteractions';
 
 const KeyTopicsComponent = () => {
+  const { textHover, cardHover } = useCursorInteractions(); 
   const marqueeRef = useRef(null);
   const marqueeRef2 = useRef(null);
   const mobileMarqueeRef = useRef(null);
@@ -96,7 +98,7 @@ const KeyTopicsComponent = () => {
       <div className="min-h-screen hidden md:flex items-center justify-center">
         <div className="flex items-center justify-between w-full max-w-7xl">
           <div className="flex-1 pr-16">
-            <h1 className="text-8xl font-bold text-transparent bg-clip-text bg-amber-500 leading-tight">
+            <h1 className="text-8xl font-bold text-transparent bg-clip-text bg-amber-500 leading-tight" {...textHover()}>
               Key Topics
             </h1>
             
@@ -119,6 +121,7 @@ const KeyTopicsComponent = () => {
                 <div 
                   ref={marqueeRef}
                   className="flex flex-col gap-24"
+                  {...cardHover()}
                 >
                   {duplicatedImages.map((image, index) => (
                     <div
@@ -139,6 +142,7 @@ const KeyTopicsComponent = () => {
                 <div 
                     ref={marqueeRef2}
                     className="flex flex-col gap-24"
+                    {...cardHover()}
                 >
                     {duplicatedImages2.map((image, index) => (
                     <div
