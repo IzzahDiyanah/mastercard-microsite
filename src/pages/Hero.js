@@ -2,6 +2,7 @@
 import React,{ useState } from 'react';
 import Image from 'next/image'
 import Cursor from '@/component/cursor';
+import { Globe, CalendarDays } from 'lucide-react';
 
 const Hero = () => {
   const [isHovered, setIsHovered] = useState(false);
@@ -81,11 +82,11 @@ const Hero = () => {
 
               <div className="flex items-center space-x-4">
                 <button className="flex items-center space-x-2 px-4 py-2 border border-white/30 rounded-full text-white text-sm hover:bg-white/10 transition-colors">
-                  <span>🌐</span>
+                  <span><Globe /></span>
                   <span>Country</span>
                 </button>
                 <button className="flex items-center space-x-2 px-4 py-2 border border-white/30 rounded-full text-white text-sm hover:bg-white/10 transition-colors">
-                  <span>📅</span>
+                  <span><CalendarDays/></span>
                   <span>Oct '23 - Mar '24</span>
                 </button>
               </div>
