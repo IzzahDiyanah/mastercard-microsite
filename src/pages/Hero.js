@@ -133,13 +133,13 @@ const Hero = () => {
                 <div className="flex items-center mb-2 md:mb-0 md:mr-4">
                   <div className="flex items-center justify-center mr-3">
                      <div className="relative flex items-center justify-center mr-3">
-                        <Image
+                      <Image
                         src="/images/Group 4020.png"
                         alt="badge"
-                        width={70}
-                        height={70}
-                        className="object-cover"
-                        />
+                        width={100}
+                        height={100}
+                        className="object-cover md:w-[70px] md:h-[70px]"
+                      />
                     <div className="absolute inset-0 flex items-center justify-center">
                       <span className="text-[7px] md:text-[11px] font-bold text-white">NEW REPORT PAGE</span>
                     </div>
