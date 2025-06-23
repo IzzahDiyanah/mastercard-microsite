@@ -10,7 +10,63 @@ const FraudCategories = () => {
   const descriptionRef = useRef(null);
   const subcategoriesRef = useRef(null);
 
-   useEffect(() => {    
+  useEffect(() => {
+    const loadGSAP = async () => {
+      const menuItemIds = [1, 2, 3, 4, 5];
+      let currentIndex = 0;
+      
+      const backgrounds = menuItemIds.map(id => {
+        const menuItem = document.querySelector(`[data-menu-id="${id}"]`);
+        return menuItem?.querySelector(".menu-item-bg");
+      }).filter(Boolean);
+      
+      backgrounds.forEach(bg => {
+        gsap.set(bg, { xPercent: -101, opacity: 0 });
+      });
+      
+      // Animation function
+      const animateNext = () => {
+        if (backgrounds.length === 0) return;
+        
+        const currentBg = backgrounds[currentIndex];
+        const currentItemId = menuItemIds[currentIndex];
+
+        // Update selectedItem to match the animation
+        setSelectedItem(currentItemId);
+        
+        const tl = gsap.timeline();
+        
+        tl.to(currentBg, {
+          xPercent: 0,
+          opacity: 1,
+          duration: 0.8,
+          ease: "power2.out"
+        })
+        .to(currentBg, {
+          duration: 2
+        })
+        .to(currentBg, {
+          xPercent: 101,
+          opacity: 0,
+          duration: 0.8,
+          ease: "power2.in",
+          onComplete: () => {
+            gsap.set(currentBg, { xPercent: -101 });
+            currentIndex = (currentIndex + 1) % menuItemIds.length;
+            animateNext();
+          }
+        });
+      };
+      
+      // Start the animation loop
+      animateNext();
+    };
+
+    loadGSAP();
+  }, []);
+
+  // Text Animation Effect
+  useEffect(() => {    
     if (descriptionRef.current && subcategoriesRef.current) {
       const descSplit = new SplitText(descriptionRef.current, { type: "lines" });
       const subSplit = new SplitText(subcategoriesRef.current, { type: "lines" });
@@ -100,16 +156,15 @@ const FraudCategories = () => {
                 {menuItems.map((item) => (
                     <div
                     key={item.id}
-                    className={`p-4 cursor-pointer transition-all duration-200 border-b border-r border-gray-700 last:border-b-0 ${
-                        selectedItem === item.id
-                        ? 'bg-amber-500 text-black'
-                        : 'text-gray-300 hover:bg-gray-700'
-                    }`}
-                    onClick={() => setSelectedItem(item.id)}
+                    data-menu-id={item.id}
+                    className={`relative p-4 cursor-pointer transition-all duration-200 border-b border-r border-gray-700 last:border-b-0 overflow-hidden text-white`}
                     >
-                    <div className="flex items-center space-x-3">
-                        <span className="text-sm md:text-lg font-medium">{item.id}.</span>
-                        <span className="text-sm md:text-lg">{item.title}</span>
+                    {/* GSAP Animation Background */}
+                    <div className="menu-item-bg absolute inset-0 bg-amber-500"></div>
+                    
+                    <div className="relative z-10 flex items-center space-x-3">
+                        <span className="text-sm md:text-base font-medium">{item.id}.</span>
+                        <span className="text-sm md:text-base">{item.title}</span>
                     </div>
                     </div>
                 ))}

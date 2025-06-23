@@ -33,14 +33,6 @@ const ThirdSection = () => {
 
     return (
         <>
-            {/* Global styles to prevent overflow */}
-            <style jsx global>{`
-                body {
-                    overscroll-behavior: none;
-                    overflow-x: hidden;
-                }
-            `}</style>
-            
             <div 
                 className="container2 h-screen flex flex-nowrap max-w-screen overflow-hidden" style={{overscrollBehavior: 'none',width: '300vh', overflowX: 'hidden'}}
             >
