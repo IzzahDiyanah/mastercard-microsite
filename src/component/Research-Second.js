@@ -18,7 +18,7 @@ const SecondApp = () => {
       {/* Left Content */}
       <div className="w-full lg:w-3/5 flex flex-col">
         {/* Top Section */}
-        <div className="h-auto lg:h-1/2 bg-gradient-to-b from-[#973f0b] to-amber-950 p-6 md:p-12 lg:p-23 text-white relative">
+        <div className="h-auto lg:h-1/2 bg-gradient-to-bl from-amber-900 to-black p-6 md:p-12 lg:p-23 text-white relative">
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-normal mb-6 lg:mb-8 max-w-xl text-white" {...cardHover()}>
             Online conversations on Safety and Security
           </h2>
@@ -74,7 +74,7 @@ const SecondApp = () => {
         </div>
 
         {/* Bottom Section */}
-        <div className="h-auto lg:h-1/2 bg-gradient-to-b from-[#F79E1B] to-[#FF5F00] p-6 md:p-12 lg:p-23 flex items-center">
+        <div className="h-auto lg:h-1/2 bg-gradient-to-bl from-[#F79E1B] to-[#FF5F00] p-6 md:p-12 lg:p-23 flex items-center">
           <div className="space-y-4 lg:space-y-6">
             <div className="flex flex-col md:flex-row items-center gap-3 md:gap-5">
               <img 

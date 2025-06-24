@@ -11,7 +11,7 @@ import { useCursorInteractions } from '@/hooks/cursorInteractions';
 const App = () => {
   const { cardHover } = useCursorInteractions();
   return (
-    <div className="bg-black">
+    <div className="bg-black sm:min-h-screen min-h-0">
       <div className="p-4 md:pt-8 lg:pt-20 md:pl-8 lg:pl-20 md:pr-0 ">
         <main className="flex flex-col gap-6 md:gap-8 lg:gap-8 items-center sm:items-start">
           {/* Header Section */}
@@ -29,6 +29,7 @@ const App = () => {
         </main>
       </div>
 
+      <div className='p-4 sm:p-0'>
       <Swiper
         spaceBetween={30}
         modules={[Pagination]}
@@ -54,6 +55,10 @@ const App = () => {
             slidesPerView: 2,
             spaceBetween: 200
           },
+          1536: {
+            slidesPerView: 2,
+            spaceBetween: 50
+          },
           1680: {
             slidesPerView: 2,
             spaceBetween: -50
@@ -73,10 +78,11 @@ const App = () => {
         <SwiperSlide {...cardHover()}><NewSecond /></SwiperSlide>
         <SwiperSlide {...cardHover()}><NewThird /></SwiperSlide>
       </Swiper>
+      </div>
       
       {/* Arrow Section */}
-      <div className="w-full flex justify-center bg-black">   
-        <div className="w-12">
+      <div className="w-full sm:h-52 flex items-center justify-center bg-black">   
+        <div className="hidden sm:block w-12">
           <img src="/images/arrow-down.png" alt="Arrow" className="w-full h-auto" />
         </div>
       </div>

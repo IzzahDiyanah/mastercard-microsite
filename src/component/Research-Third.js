@@ -79,7 +79,7 @@ const ThirdApp = () => {
           <div className="space-y-2 md:space-y-4 text-center lg:text-left">
             <p 
               ref={countRef}
-              className="font-extrabold text-8xl sm:text-7xl md:text-8xl lg:text-[120px] xl:text-[200px] 2xl:text-[200px] mb-[-10px] sm:mb-[-40px] md:mb-[-60px] lg:mb-[-80px] xl:mb-[-30px]" 
+              className="font-extrabold text-8xl sm:text-7xl md:text-8xl lg:text-[120px] xl:text-[200px] 2xl:text-[200px] mb-[-5px] sm:mb-[-30px] md:mb-[-50px] lg:mb-[-70px] xl:mb-[-10px]" 
               {...cardHover()}
             >
               6.7k
