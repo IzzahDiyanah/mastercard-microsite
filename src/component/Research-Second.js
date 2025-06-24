@@ -42,26 +42,26 @@ const SecondApp = () => {
                 <div className="flex flex-col items-center gap-4 px-4">
                   
                   {/* Top Row - 4 icons (flex row) */}
-                  <div className="flex flex-wrap justify-center gap-4 md:gap-8 lg:gap-12 xl:gap-24 w-full max-w-5xl" {...cardHover()}>
+                  <div className="flex flex-wrap justify-center gap-4 md:gap-8 lg:gap-12 xl:gap-24 w-full max-w-5xl xl:w-[1000px]" {...cardHover()}>
                     {socialIcons.slice(0, 4).map((icon, index) => (
                       <div key={index} className="flex justify-center p-2">
                         <img 
                           src={icon.src} 
                           alt={icon.alt} 
-                          className="w-auto h-12 md:h-16 lg:h-20 xl:h-24 transition-all duration-300 hover:scale-110" 
+                          className="w-auto h-12 md:h-16 lg:h-16 xl:h-36 transition-all duration-300 hover:scale-110" 
                         />
                       </div>
                     ))}
                   </div>
                   
                   {/* Bottom Row - 3 icons (flex row) */}
-                  <div className="flex flex-wrap justify-center gap-4 md:gap-8 lg:gap-12 xl:gap-28 mt-4 md:-mt-8 lg:-mt-16 xl:-mt-16 w-full max-w-4xl" {...cardHover()}>
+                  <div className="flex flex-wrap justify-center gap-4 md:gap-8 lg:gap-12 xl:gap-24 mt-4 md:-mt-8 lg:-mt-16 xl:-mt-16 w-full max-w-4xl" {...cardHover()}>
                     {socialIcons.slice(4).map((icon, index) => (
                       <div key={index} className="flex justify-center p-2">
                         <img 
                           src={icon.src} 
                           alt={icon.alt} 
-                          className="w-auto h-12 md:h-16 lg:h-20 xl:h-24 transition-all duration-300 hover:scale-110" 
+                          className="w-auto h-12 md:h-16 lg:h-20 xl:h-36 transition-all duration-300 hover:scale-110" 
                         />
                       </div>
                     ))}
@@ -99,7 +99,7 @@ const SecondApp = () => {
       </div>
 
       {/* Right Image */}
-      <div className="w-full lg:w-2/5 order-first lg:order-last" {...cardHover()}>
+      <div className="w-full lg:w-2/5 order-last lg:order-last" {...cardHover()}>
         <img 
           src="/images/mastercard-online.png" 
           alt="Mastercard Online" 

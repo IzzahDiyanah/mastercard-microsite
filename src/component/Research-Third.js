@@ -67,12 +67,12 @@ const ThirdApp = () => {
         </div>
 
         {/* Right Section */}
-        <div className="flex flex-col text-black space-y-8 md:space-y-28 w-full lg:flex-1">
+        <div className="flex flex-col text-black space-y-8 md:space-y-36 w-full lg:flex-1">
           <p className="font-medium text-xl sm:text-2xl md:text-3xl lg:text-4xl text-center lg:text-left" {...cardHover()}>
             Consumer conversations were measured in volume of mentions
           </p>
           
-          <div className="mt-[-15px] md:mt-[-30px]">
+          <div className="mt-[-15px] md:mt-[-100px]">
             <img 
               src="/images/dotted-line.png" 
               alt="Dotted line separator" 
