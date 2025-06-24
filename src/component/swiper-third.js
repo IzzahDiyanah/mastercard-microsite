@@ -14,7 +14,7 @@ const ThirdSwiper = () => {
           ].map((card, index) => (
             <div key={index} className="flex flex-col w-full md:w-[80vw] lg:w-[764px] md:flex-shrink-0">
               {/* NEW Badge */}
-              <div className="w-24 sm:w-28 md:w-36 h-10 sm:h-12 md:h-15 bg-amber-600 flex justify-center items-center rounded-b-3xl font-extrabold text-xl sm:text-2xl md:text-3xl text-white relative left-3/5 md:left-3/4 top-9 md:top-12 z-10">
+              <div className="w-24 sm:w-28 md:w-36 h-10 sm:h-12 md:h-15 bg-amber-600 flex justify-center items-center rounded-b-3xl font-extrabold text-xl sm:text-2xl md:text-3xl text-white relative left-3/5 md:left-3/4 top-9 md:top-[54px] z-10">
                 <p>NEW</p>
               </div>
 

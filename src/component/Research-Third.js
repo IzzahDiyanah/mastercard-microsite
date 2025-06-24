@@ -7,13 +7,16 @@ const ThirdApp = () => {
   const { cardHover } = useCursorInteractions();
  const countRef = useRef(null);
   const sectionRef = useRef(null);
-  const [hasAnimated, setHasAnimated] = useState(false);
-
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
         const [entry] = entries;
-        if (entry.isIntersecting && !hasAnimated) {
+        if (entry.isIntersecting) {
+          // Reset the display and start CountUp every time component comes into view
+          if (countRef.current) {
+            countRef.current.innerHTML = '0k'; // Reset to starting value
+          }
+
           const countUp = new CountUp(countRef.current, 6.7, {
             duration: 2.5,
             decimalPlaces: 1,
@@ -21,10 +24,11 @@ const ThirdApp = () => {
             useEasing: true,
             useGrouping: false,
           });
+ 
 
           if (!countUp.error) {
             countUp.start();
-            setHasAnimated(true);
+            // setHasAnimated(true);
           } else {
             console.error(countUp.error);
           }
@@ -45,7 +49,7 @@ const ThirdApp = () => {
         observer.unobserve(sectionRef.current);
       }
     };
-  }, [hasAnimated]);
+  },);
 
   return (
     <section ref={sectionRef} className="w-full min-h-screen bg-[rgb(247,158,27)] flex items-center justify-center p-4 md:p-8">

@@ -37,34 +37,37 @@ const SecondApp = () => {
                 ))}
               </div>
               
-              {/* Desktop: Original layout */}
               <div className="hidden md:block">
-                {/* Top Row - 4 icons */}
-                <div className="grid grid-cols-4 gap-16 lg:gap-36 max-w-4xl mb-4" {...cardHover()}>
-                  {socialIcons.slice(0, 4).map((icon, index) => (
-                    <img 
-                      key={index} 
-                      src={icon.src} 
-                      alt={icon.alt} 
-                      className="w-full h-auto max-w-[100px] lg:max-w-none" 
-                    />
-                  ))}
-                </div>
-                
-                {/* Bottom Row - 3 icons centered */}
-                <div className="flex justify-center w-full mt-4 lg:-mt-25">
-                  <div className="grid grid-cols-3 gap-16 lg:gap-36 max-w-2xl" {...cardHover()}>
-                    {socialIcons.slice(4).map((icon, index) => (
-                      <img 
-                        key={index} 
-                        src={icon.src} 
-                        alt={icon.alt} 
-                        className="w-full h-auto max-w-[100px] lg:max-w-none" 
-                      />
+                {/* Container for all icons with responsive spacing */}
+                <div className="flex flex-col items-center gap-4 px-4">
+                  
+                  {/* Top Row - 4 icons (flex row) */}
+                  <div className="flex flex-wrap justify-center gap-4 md:gap-8 lg:gap-12 xl:gap-24 w-full max-w-5xl" {...cardHover()}>
+                    {socialIcons.slice(0, 4).map((icon, index) => (
+                      <div key={index} className="flex justify-center p-2">
+                        <img 
+                          src={icon.src} 
+                          alt={icon.alt} 
+                          className="w-auto h-12 md:h-16 lg:h-20 xl:h-24 transition-all duration-300 hover:scale-110" 
+                        />
+                      </div>
                     ))}
                   </div>
+                  
+                  {/* Bottom Row - 3 icons (flex row) */}
+                  <div className="flex flex-wrap justify-center gap-4 md:gap-8 lg:gap-12 xl:gap-28 mt-4 md:-mt-8 lg:-mt-16 xl:-mt-16 w-full max-w-4xl" {...cardHover()}>
+                    {socialIcons.slice(4).map((icon, index) => (
+                      <div key={index} className="flex justify-center p-2">
+                        <img 
+                          src={icon.src} 
+                          alt={icon.alt} 
+                          className="w-auto h-12 md:h-16 lg:h-20 xl:h-24 transition-all duration-300 hover:scale-110" 
+                        />
+                      </div>
+                    ))}
                   </div>
-              </div>
+                </div>
+</div>
             </div>
           
           {/* NEW Badge */}
