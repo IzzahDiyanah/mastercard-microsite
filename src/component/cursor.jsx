@@ -15,29 +15,29 @@ const cursorConfigs = {
     color: "#FF5F00"
   },
   hover: {
-    size: 200,
+    size: 300,
     blur: 20,
     delay: 0.015,
     color: "#FF5F00"
   },
-  button: {
-    size: 180,
-    blur: 15,
-    delay: 0.012,
-    color: "#FF5F00"
-  },
-  text: {
-    size: 250,
-    blur: 20,
-    delay: 0.002,
-    color: "#FF5F00"
-  },
-  link: {
-    size: 220,
-    blur: 25,
-    delay: 0.018,
-    color: "#FF5F00"
-  }
+//   button: {
+//     size: 300,
+//     blur: 15,
+//     delay: 0.012,
+//     color: "#FF5F00"
+//   },
+//   text: {
+//     size: 300,
+//     blur: 20,
+//     delay: 0.002,
+//     color: "#FF5F00"
+//   },
+//   link: {
+//     size: 300,
+//     blur: 25,
+//     delay: 0.018,
+//     color: "#FF5F00"
+//   }
 };
 
 export default function BlurryCursor() {

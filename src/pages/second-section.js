@@ -6,8 +6,10 @@ import NewThird from '@/component/swiper-third';
 import { Pagination } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/pagination';
+import { useCursorInteractions } from '@/hooks/cursorInteractions';
 
 const App = () => {
+  const { cardHover } = useCursorInteractions();
   return (
     <div className="bg-black">
       <div className="p-4 md:pt-8 lg:pt-20 md:pl-8 lg:pl-20 md:pr-0 ">
@@ -15,10 +17,10 @@ const App = () => {
           {/* Header Section */}
           <div className="w-full">
             <div className="flex flex-col gap-2 md:gap-4">
-              <h2 className="font-normal text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-amber-400">
+              <h2 className="font-normal text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-amber-400" {...cardHover()}>
                 What's New?
               </h2>
-              <p className="max-w-2xl text-sm md:text-base lg:text-lg text-white">
+              <p className="max-w-2xl text-sm md:text-base lg:text-lg text-white" {...cardHover()}>
                 As our safety and security report continues to evolve, we are excited to announce
                 several significant enhancements, as compared to the reports from 2023.
               </p>
@@ -67,9 +69,9 @@ const App = () => {
 
         }}
       >
-        <SwiperSlide><NewFirst /></SwiperSlide>
-        <SwiperSlide><NewSecond /></SwiperSlide>
-        <SwiperSlide><NewThird /></SwiperSlide>
+        <SwiperSlide {...cardHover()}><NewFirst /></SwiperSlide>
+        <SwiperSlide {...cardHover()}><NewSecond /></SwiperSlide>
+        <SwiperSlide {...cardHover()}><NewThird /></SwiperSlide>
       </Swiper>
       
       {/* Arrow Section */}

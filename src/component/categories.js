@@ -7,7 +7,7 @@ import { SplitText } from 'gsap/SplitText';
 import { useCursorInteractions } from '@/hooks/cursorInteractions';
 
 const FraudCategories = () => {
-  const { textHover, cardHover } = useCursorInteractions(); 
+  const { cardHover } = useCursorInteractions(); 
   const [selectedItem, setSelectedItem] = useState(1);
   const descriptionRef = useRef(null);
   const subcategoriesRef = useRef(null);
@@ -133,7 +133,7 @@ const FraudCategories = () => {
     <div className="min-h-screen flex items-center justify-center">
       <div className="container mx-auto py-12">
         <div className="grid lg:grid-cols-2 gap-12 items-center mb-10">
-            <div className="text-white/90 leading-relaxed text-xl p-6" {...textHover()}>
+            <div className="text-white/90 leading-relaxed text-xl p-6" {...cardHover()}>
               <p>
                 The conversation were segmented into categories and 
                 subcategories based on key topics. Additional topics were 

@@ -5,7 +5,7 @@ import { Globe, CalendarDays } from 'lucide-react';
 import { useCursorInteractions } from '@/hooks/cursorInteractions';
 
 const Hero = () => {
-   const { buttonHover, linkHover, textHover, cardHover, updateCursor } = useCursorInteractions();
+   const { cardHover, updateCursor } = useCursorInteractions();
   
   return (
     <>
@@ -55,7 +55,7 @@ const Hero = () => {
               
               <button 
                 className="text-white p-2"
-                {...buttonHover()}
+                {...cardHover()}
               >
                 <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
@@ -86,21 +86,21 @@ const Hero = () => {
                 <a 
                   href="#" 
                   className="hover:text-white transition-colors"
-                  {...linkHover()}
+                 {...cardHover()}
                 >
                   Executive Summary
                 </a>
                 <a 
                   href="#" 
                   className="hover:text-white transition-colors"
-                  {...linkHover()}
+                  {...cardHover()}
                 >
                   Key Topics
                 </a>
                 <a 
                   href="#" 
                   className="hover:text-white transition-colors"
-                  {...linkHover()}
+                 {...cardHover()}
                 >
                   Key Opportunities +
                 </a>
@@ -109,14 +109,14 @@ const Hero = () => {
               <div className="flex items-center space-x-4">
                 <button 
                   className="flex items-center space-x-2 px-4 py-2 border border-white/30 rounded-full text-white text-sm hover:bg-white/10 transition-colors"
-                  {...buttonHover()}
+                  {...cardHover()}
                 >
                   <span><Globe /></span>
                   <span>Country</span>
                 </button>
                 <button 
                   className="flex items-center space-x-2 px-4 py-2 border border-white/30 rounded-full text-white text-sm hover:bg-white/10 transition-colors"
-                  {...buttonHover()}
+                  {...cardHover()}
                 >
                   <span><CalendarDays/></span>
                   <span>Oct '23 - Mar '24</span>
@@ -134,7 +134,7 @@ const Hero = () => {
                   isolation: 'isolate',
                   zIndex: 100 
                 }}
-                {...textHover()}
+                {...cardHover()}
               >
                 SAFETY AND SECURITY
               </p>
@@ -145,7 +145,7 @@ const Hero = () => {
                     zIndex: 100 
                 }}
                 className="text-3xl md:text-6xl font-extrabold text-yellow-400 leading-tight mb-4 md:mb-8 z-20 cursor-pointer"
-                {...textHover()}
+                {...cardHover()}
               >
                 Social Intelligence<br />
                 Report 2024
@@ -157,14 +157,14 @@ const Hero = () => {
                     zIndex: 100 
                 }}
                 className="text-white text-lg md:text-xl mb-8 md:mb-12 font-light cursor-pointer"
-                {...textHover()}
+                {...cardHover()}
               >
                 Singapore | OCT 2023 - MAR 2024
               </p>
               
               <button 
                 className="inline-flex items-start md:items-center flex-col md:flex-row px-4 md:px-8 py-4 bg-amber-600 text-white font-semibold rounded-lg transition-colors shadow-lg w-full md:w-auto"
-                {...buttonHover()}
+                {...cardHover()}
               >
                 <div className="flex items-center mb-2 md:mb-0 md:mr-4">
                   <div className="flex items-center justify-center mr-3">

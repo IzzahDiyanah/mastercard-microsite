@@ -1,13 +1,15 @@
-'use client'
+import { useCursorInteractions } from '@/hooks/cursorInteractions';
 
 const FirstApp = () => {
+  const { cardHover } = useCursorInteractions();
+
   return (
     <div 
       className="w-full h-screen bg-cover bg-center flex items-center p-4 sm:p-8 lg:p-16" 
       style={{ backgroundImage: "url('/images/Research Approach.png')" }}
     >
       <div className="flex-1 pr-0 sm:pr-8 lg:pr-16 max-w-full sm:max-w-md md:max-w-lg space-y-4 sm:space-y-6 md:space-y-10">
-        <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold text-transparent bg-clip-text bg-amber-500 leading-tight">
+        <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold text-transparent bg-clip-text bg-amber-500 leading-tight" {...cardHover()}>
           Research Approach
         </h1>
         
